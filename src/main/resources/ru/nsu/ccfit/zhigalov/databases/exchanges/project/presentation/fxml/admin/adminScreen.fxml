@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.nsu.ccfit.zhigalov.databases.exchanges.project.presentation.admin.AdminView">
+   <children>
+      <Button fx:id="publicPhonesButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Управление таксофонами" />
+      <Button fx:id="exchangesButton" layoutX="14.0" layoutY="59.0" mnemonicParsing="false" text="Таблица АТС" />
+      <Button fx:id="queueButton" layoutX="14.0" layoutY="103.0" mnemonicParsing="false" text="Очередь на подключение" />
+      <Button fx:id="exitButton" layoutX="21.0" layoutY="361.0" mnemonicParsing="false" text="Выход" />
+      <Button fx:id="chargeSubscriptionFeeButton" layoutX="404.0" layoutY="14.0" mnemonicParsing="false" text="Снять абонентскую плату" AnchorPane.rightAnchor="10.0" />
+      <Button fx:id="disableExpiredClientsButton" layoutX="521.0" layoutY="59.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="227.0" text="Отключить услуги абонентам с просроченными платежами" wrapText="true" AnchorPane.rightAnchor="14.0" />
+      <Button fx:id="subscribersButton" layoutX="14.0" layoutY="149.0" mnemonicParsing="false" text="Перечень абонентов" AnchorPane.leftAnchor="14.0" />
+      <Button fx:id="citiesButton" layoutX="14.0" layoutY="194.0" mnemonicParsing="false" text="Список городов" />
+   </children>
+</AnchorPane>

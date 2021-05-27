@@ -1,0 +1,12 @@
+drop function get_free_cables/
+drop procedure check_number_of_cables/
+drop trigger subscribers_bi/
+drop sequence subscriber_id_seq/
+drop procedure top_up_balance/
+drop procedure local_call/
+drop function get_local_calls_enable_price/
+drop function get_ld_calls_enable_price/
+drop procedure enable_local_calls/
+drop procedure enable_ld_calls/
+drop procedure charge_subscription_fee/
+drop procedure disable_expired_clients/

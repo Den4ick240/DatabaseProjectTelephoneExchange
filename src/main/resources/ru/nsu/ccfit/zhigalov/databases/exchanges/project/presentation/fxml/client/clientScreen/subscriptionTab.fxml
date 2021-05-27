@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="node" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.nsu.ccfit.zhigalov.databases.exchanges.project.presentation.client.signedin.tabs.SubscriptionTabView">
+    <left>
+        <BorderPane>
+            <top>
+                <fx:include fx:id="subscriptionInfo" source="subscriptionInfo.fxml" />
+            </top>
+            <center>
+                <fx:include fx:id="balanceView" source="balanceView.fxml" />
+            </center>
+            <bottom>
+            <VBox alignment="CENTER" visible="false">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <children>
+                      <Button fx:id="dropSubscriptionButton" mnemonicParsing="false" text="Отказаться от подписки">
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                      </Button>
+               </children>
+            </VBox>
+            </bottom>
+        </BorderPane>
+    </left>
+   <center>
+        <VBox alignment="CENTER">
+            <children>
+            <Group>
+               <children>
+                  <Group fx:id="localCallsGroup" layoutX="7.0">
+                     <children>
+                            <Label prefHeight="44.0" prefWidth="219.0" text="Выберите номер, по которому вы хотите позвонить:" textAlignment="CENTER" wrapText="true" />
+                            <ComboBox fx:id="numberToCallComboBox" layoutX="35.0" layoutY="54.0" prefWidth="150.0" />
+                            <Button fx:id="localCallButton" layoutX="35.0" layoutY="95.0" mnemonicParsing="false" text="Совершить звонок" />
+                     </children>
+                  </Group>
+                  <Group fx:id="ldCallsGroup" layoutY="162.0">
+                     <children>
+                            <Label layoutX="10.0" prefHeight="42.0" prefWidth="212.0" text="Выберите, в какой город вы хотите позвонить:" textAlignment="CENTER" wrapText="true" />
+                            <ComboBox fx:id="cityToCallComboBox" layoutX="41.0" layoutY="52.0" prefWidth="150.0" />
+                        <HBox alignment="CENTER" layoutY="93.0">
+                           <children>
+                              <Label prefHeight="50.0" prefWidth="129.0" text="Длительность звонка в минутах: " wrapText="true">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="callLengthTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="83.0">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                            <Button fx:id="longDistanceButton" layoutX="24.0" layoutY="153.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="184.0" text="Совершить междугородний звонок" textAlignment="CENTER" wrapText="true" />
+                     </children>
+                  </Group>
+               </children>
+            </Group>
+            <Label fx:id="responseLabel" alignment="CENTER" prefHeight="88.0" prefWidth="281.0" text="Label" textAlignment="CENTER" wrapText="true">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+            </children>
+        </VBox>
+   </center>
+</BorderPane>

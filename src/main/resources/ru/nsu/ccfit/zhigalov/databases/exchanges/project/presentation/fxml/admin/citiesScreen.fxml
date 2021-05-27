@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" prefHeight="542.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.nsu.ccfit.zhigalov.databases.exchanges.project.presentation.admin.cities.CitiesView">
+   <children>
+      <TableView fx:id="citiesTable" prefHeight="365.0" prefWidth="359.0">
+        <columns>
+          <TableColumn fx:id="cityColumn" prefWidth="195.0" text="Город" />
+          <TableColumn fx:id="callsColumn" minWidth="0.0" prefWidth="161.0" text="Количество звонков" />
+        </columns>
+         <VBox.margin>
+            <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
+         </VBox.margin>
+      </TableView>
+      <Button fx:id="goBackButton" mnemonicParsing="false" text="Вернуться">
+         <VBox.margin>
+            <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>

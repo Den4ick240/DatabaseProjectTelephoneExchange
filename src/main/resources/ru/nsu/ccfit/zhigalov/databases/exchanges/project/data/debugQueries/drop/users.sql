@@ -1,0 +1,1 @@
+drop user unauthorized_client /

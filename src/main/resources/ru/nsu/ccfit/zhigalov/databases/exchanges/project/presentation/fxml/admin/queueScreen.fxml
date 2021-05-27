@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="628.0" prefWidth="910.0" style="-fx-background-color: #555555;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.nsu.ccfit.zhigalov.databases.exchanges.project.presentation.admin.queue.QueueView">
+   <top>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </BorderPane.margin>
+         <children>
+            <Label text="Заявки на подключение" textFill="#00e5ff">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <FlowPane>
+               <Label text="Фильтр:" textFill="#00f2ff">
+                  <FlowPane.margin>
+                     <Insets bottom="5.0" right="5.0" top="5.0" />
+                  </FlowPane.margin>
+               </Label>
+               <ChoiceBox fx:id="beneficiaryFilterChoiceBox" prefWidth="150.0">
+                  <FlowPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </FlowPane.margin>
+               </ChoiceBox>
+               <TableView fx:id="queueTable" prefHeight="211.0" prefWidth="851.0" style="-fx-background-color: #aaaaaa;">
+                  <columns>
+                     <TableColumn fx:id="requestIdColumn" prefWidth="86.0" text="Номер" />
+                     <TableColumn fx:id="personIdColumn" prefWidth="97.0" text="ID клиента" />
+                     <TableColumn fx:id="nameColumn" prefWidth="77.0" text="Имя" />
+                     <TableColumn fx:id="surnameColumn" minWidth="6.0" prefWidth="98.0" text="Фамилия" />
+                     <TableColumn fx:id="beneficiaryColumn" prefWidth="82.0" text="Льготник" />
+                     <TableColumn fx:id="addressColumn" prefWidth="101.0" text="Адрес" />
+                     <TableColumn fx:id="exchangeColumn" prefWidth="184.0" text="АТС" />
+                     <TableColumn fx:id="requestDateColumn" minWidth="0.0" prefWidth="120.0" text="Дата запроса" />
+                  </columns>
+               </TableView>
+            </FlowPane>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <BorderPane style="-fx-background-color: #aaaaaa;" BorderPane.alignment="CENTER">
+         <left>
+            <HBox style="-fx-background-color: #aaaaaa;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+               <VBox fillWidth="false">
+                  <HBox.margin>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                  </HBox.margin>
+                  <Label text="Клиент:">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox>
+                     <Label text="ID:">
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                        <padding>
+                           <Insets bottom="5.0" />
+                        </padding>
+                     </Label>
+                     <Label fx:id="personIdLabel" text="person_id">
+                        <padding>
+                           <Insets bottom="5.0" />
+                        </padding>
+                     </Label>
+                  </HBox>
+                  <Label fx:id="nameSurnameLabel" text="Name, Surname" wrapText="true">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding></Label>
+                  <Label fx:id="genderAgeLabel" text="gender, age">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+                  <HBox>
+                     <Label text="Льготник">
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                        <padding>
+                           <Insets bottom="5.0" />
+                        </padding>
+                     </Label>
+                     <Label fx:id="beneficiaryLabel" text="no">
+                        <padding>
+                           <Insets bottom="5.0" />
+                        </padding></Label>
+                  </HBox>
+               </VBox>
+               <VBox>
+                  <HBox.margin>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                  </HBox.margin>
+                  <Label text="Адрес:">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="addressLabel" text="address" />
+                  <HBox>
+                     <Label text="Свободные кабели:" />
+                     <Label fx:id="freeCablesLabel" text="12" />
+                  </HBox>
+                  <Label layoutX="10.0" layoutY="10.0" text="АТС:">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox>
+                     <Label text="ID:">
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                     </Label>
+                     <Label fx:id="exchangeIdLabel" text="exchange_id" />
+                  </HBox>
+                  <Label fx:id="exchangeNameLabel" text="exchange_name" />
+               </VBox>
+            </HBox>
+         </left>
+         <right>
+            <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets right="20.0" />
+               </BorderPane.margin>
+               <Label text="Выберите телефонный номер:" wrapText="true">
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+               </Label>
+               <ComboBox fx:id="availablePhoneNumbersComboBox" prefHeight="31.0" prefWidth="183.0">
+                  <VBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </VBox.margin>
+               </ComboBox>
+               <Label text="Выберите тип телефона:">
+                  <VBox.margin>
+                     <Insets bottom="5.0" />
+                  </VBox.margin>
+               </Label>
+               <ChoiceBox fx:id="phoneTypeChoiceBox" prefHeight="22.0" prefWidth="150.0" />
+               <HBox>
+                  <VBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </VBox.margin>
+                  <Button fx:id="assignButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Назначить">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="dropButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="112.0" text="Отклонить">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </HBox>
+            </VBox>
+         </right>
+         <top>
+            <HBox style="-fx-background-color: #666666;" BorderPane.alignment="CENTER">
+               <Label text="Номер запроса" textFill="#6aebfc" wrapText="true">
+                  <HBox.margin>
+                     <Insets bottom="10.0" left="20.0" top="10.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font name="System Bold" size="17.0" />
+                  </font>
+               </Label>
+               <Label fx:id="requestIdLabel" text="request_id" textFill="#6aebfc" wrapText="true">
+                  <HBox.margin>
+                     <Insets bottom="10.0" left="5.0" right="10.0" top="10.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font name="System Bold" size="17.0" />
+                  </font>
+               </Label>
+               <Label text="Дата запроса" textFill="#6aebfc" wrapText="true">
+                  <HBox.margin>
+                     <Insets bottom="10.0" left="10.0" top="10.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font name="System Bold" size="17.0" />
+                  </font>
+               </Label>
+               <Label fx:id="requestDateLabel" text="request_date" textFill="#6aebfc" wrapText="true">
+                  <HBox.margin>
+                     <Insets bottom="10.0" left="5.0" right="10.0" top="10.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font name="System Bold" size="17.0" />
+                  </font>
+               </Label>
+            </HBox>
+         </top>
+      </BorderPane>
+   </center>
+   <bottom>
+      <BorderPane BorderPane.alignment="CENTER">
+         <right>
+            <Button fx:id="goBackButton" mnemonicParsing="false" text="Назад" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="20.0" top="10.0" />
+               </BorderPane.margin>
+            </Button>
+         </right>
+         <left>
+            <Label fx:id="responseLabel" alignment="TOP_LEFT" prefHeight="40.0" prefWidth="627.0" text="response" textFill="#6aebfc" wrapText="true" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </Label>
+         </left>
+      </BorderPane>
+   </bottom>
+</BorderPane>

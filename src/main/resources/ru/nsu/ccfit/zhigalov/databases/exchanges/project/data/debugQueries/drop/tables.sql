@@ -1,0 +1,17 @@
+DROP TABLE Subscribers/
+DROP TABLE Queue/
+DROP TABLE ExchangesWithAddresses/
+DROP TABLE PublicPhones/
+DROP TABLE People/
+DROP TABLE Genders/
+DROP TABLE Addresses/
+DROP TABLE LocalCalls/
+DROP TABLE LongDistanceCalls/
+DROP TABLE Cities/
+DROP TABLE PhoneNumbers/
+DROP TABLE PhoneType/
+DROP TABLE CityExchanges/
+DROP TABLE DepartmentalExchanges/
+DROP TABLE InstitutionalExchanges/
+DROP TABLE Exchanges/
+DROP TABLE Prices/

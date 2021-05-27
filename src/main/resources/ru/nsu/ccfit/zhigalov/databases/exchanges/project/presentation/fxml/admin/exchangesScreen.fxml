@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="487.0" prefWidth="852.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.nsu.ccfit.zhigalov.databases.exchanges.project.presentation.admin.exchanges.ExchangesView">
+   <children>
+      <TableView fx:id="cityExchangesTableView" layoutX="30.0" layoutY="56.0" prefHeight="211.0" prefWidth="233.0">
+        <columns>
+          <TableColumn fx:id="cityExchangeIdColumn" editable="false" prefWidth="99.0" text="Номер АТС" />
+          <TableColumn fx:id="nameColumn" editable="false" prefWidth="133.0" text="Имя АТС" />
+        </columns>
+      </TableView>
+      <TableView fx:id="departmentalExchangesTableView" layoutX="282.0" layoutY="56.0" prefHeight="211.0" prefWidth="257.0">
+         <columns>
+            <TableColumn fx:id="departmentalExchangeIdColumn" editable="false" prefWidth="99.0" text="Номер АТС" />
+            <TableColumn fx:id="departmentNameColumn" editable="false" prefWidth="157.0" text="Имя ведомства" />
+         </columns>
+      </TableView>
+      <TableView fx:id="institutionalExchangesTableView" layoutX="558.0" layoutY="56.0" prefHeight="211.0" prefWidth="257.0">
+         <columns>
+            <TableColumn fx:id="institutionalExchangeIdColumn" editable="false" prefWidth="99.0" text="Номер АТС" />
+            <TableColumn fx:id="institutionNameColumn" editable="false" prefWidth="157.0" text="Имя учреждения" />
+         </columns>
+      </TableView>
+      <Button fx:id="goBackButton" layoutX="30.0" layoutY="440.0" mnemonicParsing="false" text="Назад" />
+      <Label fx:id="responseLabel" alignment="TOP_LEFT" layoutX="30.0" layoutY="296.0" prefHeight="126.0" prefWidth="548.0" text="REsponse" wrapText="true">
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+              </items>
+            </ContextMenu>
+         </contextMenu></Label>
+      <VBox alignment="CENTER" layoutX="587.0" layoutY="296.0">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label text="Номер АТС:">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="idTextField" editable="false" prefHeight="31.0" prefWidth="124.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <ChoiceBox fx:id="exchangeTypeChoiceBox" prefHeight="31.0" prefWidth="218.0" />
+            <AnchorPane prefHeight="70.0" prefWidth="234.0">
+               <children>
+                  <FlowPane fx:id="departmentPane" alignment="TOP_CENTER" layoutX="11.0" prefHeight="70.0" prefWidth="226.0" visible="false">
+                     <children>
+                        <Label text="Имя ведомства">
+                           <FlowPane.margin>
+                              <Insets bottom="5.0" />
+                           </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="departmentNameTextField" prefHeight="31.0" prefWidth="218.0">
+                           <FlowPane.margin>
+                              <Insets bottom="5.0" />
+                           </FlowPane.margin>
+                        </TextField>
+                     </children>
+                  </FlowPane>
+                  <FlowPane fx:id="institutionPane" alignment="TOP_CENTER" layoutX="13.0" prefHeight="70.0" prefWidth="226.0" visible="false">
+                     <children>
+                        <Label text="Имя учреждения">
+                           <FlowPane.margin>
+                              <Insets bottom="5.0" />
+                           </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="institutionNameTextField" prefHeight="31.0" prefWidth="218.0">
+                           <FlowPane.margin>
+                              <Insets bottom="5.0" />
+                           </FlowPane.margin>
+                        </TextField>
+                     </children>
+                  </FlowPane>
+                  <FlowPane fx:id="cityPane" alignment="CENTER" layoutX="11.0" prefHeight="70.0" prefWidth="218.0">
+                     <children>
+                        <Label text="Имя АТС">
+                           <FlowPane.margin>
+                              <Insets bottom="5.0" />
+                           </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="nameTextField" prefHeight="31.0" prefWidth="226.0">
+                           <FlowPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </FlowPane.margin>
+                        </TextField>
+                     </children>
+                  </FlowPane>
+               </children>
+            </AnchorPane>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button fx:id="insertButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="81.0" text="Создать">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="updateButton" mnemonicParsing="false" prefWidth="69.0" text="Обновить">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="deleteButton" mnemonicParsing="false" prefWidth="69.0" text="Удалить">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

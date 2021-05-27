@@ -1,0 +1,1 @@
+create user unauthorized_client IDENTIFIED BY ucpassword /
