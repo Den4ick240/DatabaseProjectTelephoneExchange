@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'ru.nsu.ccfit.zhigalov.databases.exchanges.project.Main'
+    }
+    setBaseName("Zhigalov18206")
+    destinationDirectory = layout.projectDirectory.dir('out');
+    version()
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
+
+task zipSourse(type: Zip) {
+    setBaseName("Zhigalov18206_SourseCode");
+    destinationDirectory = layout.projectDirectory.dir('out');
+    version('')
+    from layout.projectDirectory.dir('src/main');
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8
+    compile group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '19.7.0.0'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
